@@ -73,16 +73,16 @@ Add in the action creators and action constants needed to add a smurf to state a
 
 Connect this component to redux **passing in your fetchSmurfs action only.**
 
-- [ ] Connect the fetchSmurfs actions to the App component.
-- [ ] Call the fetchSmurfs action when the component first loads.
+- [x] Connect the fetchSmurfs actions to the App component.
+- [x] Call the fetchSmurfs action when the component first loads.
 
 #### components/SmurfList.js
 
 Connect this component to redux, **passing in your smurf array and loading status state values.**
 
-- [ ] Connect the smurfs and loading state values to the SmurfList component.
-- [ ] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
-- [ ] Replace the static isLoading variable with the state loading variable.
+- [x] Connect the smurfs and loading state values to the SmurfList component.
+- [x] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
+- [x] Replace the static isLoading variable with the state loading variable.
 
 #### components/Smurf.js
 
