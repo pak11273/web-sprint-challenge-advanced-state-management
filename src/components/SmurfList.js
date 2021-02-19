@@ -10,18 +10,16 @@ const SmurfList = (props) => {
 
   return (
     <div className="listContainer">
-      {smurfs.map((smurf, i) => {
-        return <Smurf key={i} smurf={smurf} />;
-      })}
+      {smurfs &&
+        smurfs.map((smurf, i) => {
+          return <Smurf key={i} smurf={smurf} />;
+        })}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return state;
-  //   return {
-  //     isLoading: state.isLoading,
-  //   };
 };
 
 export default connect(mapStateToProps)(SmurfList);

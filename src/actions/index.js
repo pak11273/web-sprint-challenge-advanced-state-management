@@ -1,24 +1,29 @@
-import axios from "axios";
-
 // types
 export const FETCH_SMURFS = "FETCH_SMURFS";
-export const ADD_SMURFS = "ADD_SMURFS";
+export const ADD_SMURF = "ADD_SMURF";
 export const SET_ERROR = "SET_ERROR";
 export const SMURF_FETCH_SUCCESS = "SMURF_FETCH_SUCCESS";
 export const SMURF_FETCH_FAIL = "SMURF_FETCH_FAIL";
 
 // actions
 export const fetchSmurfs = () => {
-  // isLoading: true
-  return {
-    type: FETCH_SMURFS,
+  return (dispatch) => {
+    dispatch({
+      type: FETCH_SMURFS,
+    });
+
+    setTimeout(() => {
+      dispatch({
+        type: SMURF_FETCH_SUCCESS,
+      });
+    }, 3000);
   };
 };
 
-export const addSmurf = () => {
-  //   [name, nickname, position, summary];
+export const addSmurf = (smurf) => {
   return {
-    type: ADD_SMURFS,
+    type: ADD_SMURF,
+    payload: smurf,
   };
 };
 

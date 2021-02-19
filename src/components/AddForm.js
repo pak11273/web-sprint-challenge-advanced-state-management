@@ -4,7 +4,6 @@ import { addSmurf, setError } from "../actions";
 import { connect } from "react-redux";
 
 const AddForm = (props) => {
-  console.log(props);
   const { error } = props;
   const [state, setState] = useState({
     name: "",
@@ -33,6 +32,7 @@ const AddForm = (props) => {
     });
   };
 
+  // Make sure to spread state within the handleChange event to insure all form values are saved.
   //   const errorMessage = "";
   const errorMessage = error;
 
