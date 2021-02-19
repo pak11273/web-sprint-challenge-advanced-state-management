@@ -4,6 +4,8 @@ import axios from "axios";
 export const FETCH_SMURFS = "FETCH_SMURFS";
 export const ADD_SMURFS = "ADD_SMURFS";
 export const SET_ERROR = "SET_ERROR";
+export const SMURF_FETCH_SUCCESS = "SMURF_FETCH_SUCCESS";
+export const SMURF_FETCH_FAIL = "SMURF_FETCH_FAIL";
 
 // actions
 export const fetchSmurfs = () => {

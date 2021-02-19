@@ -1,17 +1,21 @@
+import "./index.css";
+
+import App from "./App";
+import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
+import { store } from "./store";
 
-import "./index.css";
-import App from "./App";
-
-const { worker } = require('./mocks/browser');
+const { worker } = require("./mocks/browser");
 worker.start();
 
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <App />, 
-    rootElement
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
 );
 
 //Task List:

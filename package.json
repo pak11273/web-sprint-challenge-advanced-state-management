@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "msw": "^0.21.3"
+    "msw": "^0.21.3",
+    "redux-logger": "^3.0.6"
   }
 }
