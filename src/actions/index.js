@@ -27,10 +27,10 @@ export const addSmurf = (smurf) => {
   };
 };
 
-export const setError = () => {
+export const setError = (error) => {
   return {
     type: SET_ERROR,
-    error: "This is an error",
+    payload: error,
   };
 };
 

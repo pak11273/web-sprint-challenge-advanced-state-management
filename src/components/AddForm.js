@@ -4,7 +4,8 @@ import { addSmurf, setError } from "../actions";
 import { connect } from "react-redux";
 
 const AddForm = (props) => {
-  const { error } = props;
+  const { error, setError } = props;
+  console.log("err: ", error);
   const [state, setState] = useState({
     name: "",
     position: "",
@@ -14,6 +15,7 @@ const AddForm = (props) => {
 
   const handleChange = (e) => {
     setState({
+      ...state,
       [e.target.name]: e.target.value,
     });
   };
@@ -21,18 +23,17 @@ const AddForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (state.name === "" || state.position === "" || state.nickname === "") {
-      //   errorMessage = "Name, position and nickname fields are required.";
       setError("Name, position and nickname fields are required.");
+    } else {
+      addSmurf({
+        name: "test",
+        position: "tester",
+        nickname: "testsmurf",
+        summary: "none",
+      });
     }
-    addSmurf({
-      name: "test",
-      position: "tester",
-      nickname: "testsmurf",
-      summary: "none",
-    });
   };
 
-  // Make sure to spread state within the handleChange event to insure all form values are saved.
   //   const errorMessage = "";
   const errorMessage = error;
 
@@ -44,8 +45,9 @@ const AddForm = (props) => {
           <label htmlFor="name">Name:</label>
           <br />
           <input
+            type="text"
             onChange={handleChange}
-            value={state.name}
+            value={state.name || ""}
             name="name"
             id="name"
           />
@@ -54,8 +56,9 @@ const AddForm = (props) => {
           <label htmlFor="position">Position:</label>
           <br />
           <input
+            type="text"
             onChange={handleChange}
-            value={state.position}
+            value={state.position || ""}
             name="position"
             id="position"
           />
@@ -64,8 +67,9 @@ const AddForm = (props) => {
           <label htmlFor="nickname">Nickname:</label>
           <br />
           <input
+            type="text"
             onChange={handleChange}
-            value={state.nickname}
+            value={state.nickname || ""}
             name="nickname"
             id="nickname"
           />
@@ -74,8 +78,9 @@ const AddForm = (props) => {
           <label htmlFor="description">Description:</label>
           <br />
           <textarea
+            type="text"
             onChange={handleChange}
-            value={state.description}
+            value={state.description || ""}
             name="description"
             id="description"
           />
